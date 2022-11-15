@@ -31,28 +31,28 @@ export default function SignUp() {
     }
 
     // Sending data to server
-    fetch("http://localhost:5000/signup", {
+    fetch("https://devansh-instagram-backend.herokuapp.com/signup", {
       method: "post",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         name: name,
         userName: userName,
         email: email,
-        password: password
-
-      })
-    }).then(res => res.json())
-      .then(data => {
+        password: password,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
         if (data.error) {
-          notifyA(data.error)
+          notifyA(data.error);
         } else {
-          notifyB(data.message)
-          navigate("/signin")
+          notifyB(data.message);
+          navigate("/signin");
         }
-        console.log(data)
-      })
+        console.log(data);
+      });
   }
 
   return (

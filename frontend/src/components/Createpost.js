@@ -19,26 +19,27 @@ export default function Createpost() {
     // saving post to mongodb
     if (url) {
 
-      fetch("http://localhost:5000/createPost", {
+      fetch("https://devansh-instagram-backend.herokuapp.com/createPost", {
         method: "post",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": "Bearer " + localStorage.getItem("jwt")
+          Authorization: "Bearer " + localStorage.getItem("jwt"),
         },
         body: JSON.stringify({
           body,
-          pic: url
-        })
-      }).then(res => res.json())
-        .then(data => {
+          pic: url,
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
           if (data.error) {
-            notifyA(data.error)
+            notifyA(data.error);
           } else {
-            notifyB("Successfully Posted")
-            navigate("/")
+            notifyB("Successfully Posted");
+            navigate("/");
           }
         })
-        .catch(err => console.log(err))
+        .catch((err) => console.log(err));
     }
 
   }, [url])

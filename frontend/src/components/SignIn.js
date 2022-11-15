@@ -24,29 +24,29 @@ export default function SignIn() {
       return
     }
     // Sending data to server
-    fetch("http://localhost:5000/signin", {
+    fetch("https://devansh-instagram-backend.herokuapp.com/signin", {
       method: "post",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         email: email,
-        password: password
-
-      })
-    }).then(res => res.json())
-      .then(data => {
+        password: password,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
         if (data.error) {
-          notifyA(data.error)
+          notifyA(data.error);
         } else {
-          notifyB("Signed In Successfully")
-          console.log(data)
-          localStorage.setItem("jwt", data)
-          setUserLogin(true)
-          navigate("/")
+          notifyB("Signed In Successfully");
+          console.log(data);
+          localStorage.setItem("jwt", data);
+          setUserLogin(true);
+          navigate("/");
         }
-        console.log(data)
-      })
+        console.log(data);
+      });
   }
 
   return (

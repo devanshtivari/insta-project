@@ -1,5 +1,12 @@
 .signUp{
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB1lN1hGZAj0MpZ1ZoN7tt7q38JyzTvjmSMQ&usqp=CAU");
+    
+ background: linear-gradient(270deg, #833ab4, #fd1d1d, #fcb045);
+background-size: 600% 600%;
+
+-webkit-animation: Instagram 3s ease-in-out infinite;
+-moz-animation: Instagram 3s ease-in-out infinite;
+-o-animation: Instagram 3s ease-in-out infinite;
+animation: Instagram 3s ease-in-out infinite;
     background-size: cover;
     flex: 1;
     display: flex;
@@ -7,12 +14,38 @@
     align-items: center;
 }
 
+
+@-webkit-keyframes Instagram {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes Instagram {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-o-keyframes Instagram {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes Instagram {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
 .form{
     background-color: #fff;
     padding: 30px;
     border: 1px solid rgb(129, 121, 121);
-    border-radius: 1px;
-    
+    border-radius: 10px;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 .signUpLogo{
     width: 200px;

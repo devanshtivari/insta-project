@@ -8,9 +8,10 @@ export default function Navbar({ login }) {
   const { setModalOpen } = useContext(LoginContext);
   const loginStatus = () => {
     const token = localStorage.getItem("jwt");
-    if (login || token) {
+    if (login || token) {  
       return [
         <>
+          <img src={logo} alt="" />
           <Link to="/profile">
             <li>Profile</li>
           </Link>
@@ -23,23 +24,19 @@ export default function Navbar({ login }) {
         </>,
       ];
     } else {
-      return [
-        <>
-          <Link to="/signup">
-            <li>SignUp</li>
-          </Link>
-          <Link to="/signin">
-            <li>SignIn</li>
-          </Link>
-        </>,
-      ];
     }
   };
 
+  const styles = localStorage.getItem("jwt") ? "'block'" : "'none'";
+
   return (
-    <div className="navbar">
-      <img src={logo} alt="" />
-      <ul className="nav-menu">{loginStatus()}</ul>
-    </div>
+    <>
+      {console.log(`display:${styles}`)}
+      <div className="navbar" style={{  }}>
+        <ul className="nav-menu">
+          {loginStatus()}
+        </ul>
+      </div>
+    </>
   );
 }

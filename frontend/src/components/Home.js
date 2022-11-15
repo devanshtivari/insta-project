@@ -13,7 +13,7 @@ export default function Home() {
     }
 
     // Fetching all posts
-    fetch("http://localhost:5000/allposts", {
+    fetch("https://devansh-instagram-backend.herokuapp.com/allposts", {
       headers: {
         Authorization: "Bearer " + localStorage.getItem("jwt"),
       },

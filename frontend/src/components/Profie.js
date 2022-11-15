@@ -4,7 +4,7 @@ import "./Profile.css";
 export default function Profie() {
   const [pic, setPic] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/myposts", {
+    fetch("https://devansh-instagram-backend.herokuapp.com/myposts", {
       headers: {
         Authorization: "Bearer " + localStorage.getItem("jwt"),
       },
